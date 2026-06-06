@@ -11,3 +11,7 @@ item.@.orangedoll.name=Orange Soldier
 item.@.purpledoll.name=Purple Soldier
 
 item.@.horsedoll.name=Dirt Horse
+
+entity.@.claysoldier.name=Clay Soldier
+entity.@.dirthorse.name=Dirt Horse
+entity.@.gravelchunk.name=Gravel Chunk

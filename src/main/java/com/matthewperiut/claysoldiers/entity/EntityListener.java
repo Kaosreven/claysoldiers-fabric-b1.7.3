@@ -4,7 +4,7 @@ import com.matthewperiut.claysoldiers.entity.behavior.EntityClayMan;
 import com.matthewperiut.claysoldiers.entity.behavior.EntityDirtHorse;
 import com.matthewperiut.claysoldiers.entity.behavior.EntityGravelChunk;
 import net.mine_diver.unsafeevents.listener.EventListener;
-import net.modificationstation.stationapi.api.event.entity.EntityRegister;
+import net.modificationstation.stationapi.api.event.entity.EntityRegisterEvent;
 import net.modificationstation.stationapi.api.event.registry.MobHandlerRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.registry.Registry;
@@ -17,10 +17,10 @@ public class EntityListener {
     public static Namespace MOD_ID = Null.get();
 
     @EventListener
-    public void registerEntities(EntityRegister event) {
-        event.register(EntityClayMan.class, "claysoldier");
-        event.register(EntityDirtHorse.class, "dirthorse");
-        event.register(EntityGravelChunk.class, "gravelchunk");
+    public void registerEntities(EntityRegisterEvent event) {
+        event.register(Identifier.of(MOD_ID, "claysoldier"), EntityClayMan.class);
+        event.register(Identifier.of(MOD_ID, "dirthorse"), EntityDirtHorse.class);
+        event.register(Identifier.of(MOD_ID, "gravelchunk"), EntityGravelChunk.class);
     }
 
     @EventListener
